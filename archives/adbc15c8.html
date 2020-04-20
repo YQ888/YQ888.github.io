@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>coding云环境开发博客 | 馀小少</title><meta name="description" content="coding云环境开发博客"><meta name="keywords" content="coding"><meta name="author" content="馀小少"><meta name="copyright" content="馀小少"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon1.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="coding云环境开发博客"><meta name="twitter:description" content="coding云环境开发博客"><meta name="twitter:image" content="http://image.baidu.com/search/down?tn=download&amp;word=download&amp;ie=utf8&amp;fr=detail&amp;url=http%3A%2F%2Fpic2.zhimg.com%2Fv2-f9654b817205f6af3e472af284ecc2b2_1200x500.jpg&amp;thumburl=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D1051132835%2C1344326547%26fm%3D26%26gp%3D0.jpg"><meta property="og:type" content="article"><meta property="og:title" content="coding云环境开发博客"><meta property="og:url" content="http://yuxiaoshao.cn/archives/adbc15c8.html"><meta property="og:site_name" content="馀小少"><meta property="og:description" content="coding云环境开发博客"><meta property="og:image" content="http://image.baidu.com/search/down?tn=download&amp;word=download&amp;ie=utf8&amp;fr=detail&amp;url=http%3A%2F%2Fpic2.zhimg.com%2Fv2-f9654b817205f6af3e472af284ecc2b2_1200x500.jpg&amp;thumburl=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D1051132835%2C1344326547%26fm%3D26%26gp%3D0.jpg"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://yuxiaoshao.cn/archives/adbc15c8.html"><link rel="prev" title="分享几款自己用的图床" href="http://yuxiaoshao.cn/archives/8646cdf.html"><link rel="next" title="（二）本机生成ssh公钥" href="http://yuxiaoshao.cn/archives/3139128020.html"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: {"languages":{"author":"作者: 馀小少","link":"链接: ","source":"来源: 馀小少","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: 'false',
+  isFontAwesomeV5: false,
+  isPhotoFigcaption: false
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isSidebar: true  
+  }</script><noscript><style>
+#page-header {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.0"></head><body><canvas class="fireworks"></canvas><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/2.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">38</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">40</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/%E9%9A%8F%E7%AC%94/"><i class="fa-fw fa fa-tags"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="http://yz-yq.gitee.io/anires/" target="_blank" rel="noopener"><i class="fa-fw fa fa-address-card"></i><span> 我的简历</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 列表</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#创建coding仓库"><span class="toc-number">1.</span> <span class="toc-text">创建coding仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#新建源码仓库"><span class="toc-number">1.1.</span> <span class="toc-text">新建源码仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建仓库"><span class="toc-number">1.1.1.</span> <span class="toc-text">新建仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上传源码"><span class="toc-number">1.1.2.</span> <span class="toc-text">上传源码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#检测"><span class="toc-number">1.1.3.</span> <span class="toc-text">检测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新建静态文件仓库"><span class="toc-number">1.2.</span> <span class="toc-text">新建静态文件仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建仓库-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">新建仓库</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建cloud-studio"><span class="toc-number">2.</span> <span class="toc-text">创建cloud studio</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#配置ssh公钥"><span class="toc-number">2.1.</span> <span class="toc-text">配置ssh公钥</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#复制云studio的公钥"><span class="toc-number">2.1.1.</span> <span class="toc-text">复制云studio的公钥</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建工作空间"><span class="toc-number">2.2.</span> <span class="toc-text">创建工作空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加hexo环境"><span class="toc-number">2.3.</span> <span class="toc-text">添加hexo环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建终端"><span class="toc-number">2.3.1.</span> <span class="toc-text">新建终端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用-cloud-studio-写第一篇文章"><span class="toc-number">2.4.</span> <span class="toc-text">用 cloud studio 写第一篇文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将云端博客部署在静态仓库"><span class="toc-number">2.5.</span> <span class="toc-text">将云端博客部署在静态仓库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#静态仓库部署页面"><span class="toc-number">3.</span> <span class="toc-text">静态仓库部署页面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#将cloud-studio里的博客同步到源码仓库"><span class="toc-number">4.</span> <span class="toc-text">将cloud studio里的博客同步到源码仓库</span></a></li></ol></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><div class="post-bg" id="nav" style="background-image: url(http://image.baidu.com/search/down?tn=download&amp;word=download&amp;ie=utf8&amp;fr=detail&amp;url=http%3A%2F%2Fpic2.zhimg.com%2Fv2-f9654b817205f6af3e472af284ecc2b2_1200x500.jpg&amp;thumburl=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D1051132835%2C1344326547%26fm%3D26%26gp%3D0.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">馀小少</a></span><span class="pull_right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/%E9%9A%8F%E7%AC%94/"><i class="fa-fw fa fa-tags"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="http://yz-yq.gitee.io/anires/" target="_blank" rel="noopener"><i class="fa-fw fa fa-address-card"></i><span> 我的简历</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 列表</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="post-info"><div id="post-title"><div class="posttitle">coding云环境开发博客</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-04-20 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2020-04-20</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-04-20 13:02:42"><i class="fa fa-history" aria-hidden="true"></i> 更新于 2020-04-20</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Hexo/">Hexo</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">1.2k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 3 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/archives/adbc15c8.html#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/archives/adbc15c8.html" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><p>第一次用coding，本文博客参照<a href="https://www.antmoe.com/posts/ecb793d4/index.html" target="_blank" rel="noopener">这里</a>，感觉coding还是挺强大的。如果没有配置成功，请更换浏览器再试试，coding的云开发环境不是稳定，进去的时候很可能会挂掉</p>
+<blockquote>
+<p>本文博客图床使用的<a href="https://api.abcyun.co的api里面的牛图图床接口，使用picgo工具上传" target="_blank" rel="noopener">https://api.abcyun.co的api里面的牛图图床接口，使用picgo工具上传</a></p>
+</blockquote>
+<p>个人还是不喜欢该方式编辑博客，</p>
+<h1 id="创建coding仓库"><a href="#创建coding仓库" class="headerlink" title="创建coding仓库"></a>创建coding仓库</h1><p>这里创建两个仓库，仓库一存放源码，仓库二存放静态文件</p>
+<p>仓库一的源码会通过ssh复制到云空间，这样装上node环境后就可以直接对博客进行编辑了。coding的存储空间一个仓库好像是2G，博客应该是够用了。</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/Ud20aaff2d09943f6bc933916c5cb4947z.png"  alt="image-20200420100812187"></p>
+<p>这里都采用第三个模板创建仓库，懒得配置部署等功能</p>
+<h2 id="新建源码仓库"><a href="#新建源码仓库" class="headerlink" title="新建源码仓库"></a>新建源码仓库</h2><h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><p>新建一个source仓库</p>
+<p>这里可以选择初始化，也可以不用</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/Ub88852c91e574d45898293b2810a029fZ.png"  alt="image-20200420102907075"></p>
+<h3 id="上传源码"><a href="#上传源码" class="headerlink" title="上传源码"></a>上传源码</h3><p>目前该仓库还是空的，这里本地上传源码到该仓库里</p>
+<p>使用git bash打开博客文件夹创建一个空git仓库</p>
+<p>如果你的博客文件夹里有.git文件夹，删除就是了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<p>然后根目录流就会新建一个.git文件</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/U33425b9cc7054f4eb698bf8bc1960508U.png"  alt="image-20200420103321552"></p>
+<p>将需要上传的文件写入缓存</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<p>添加说明（massage）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git commit -m 第一次提交源码</span><br></pre></td></tr></table></figure>
+
+<p>复制你刚才的仓库路径，我这里使用ssh路径，如果你没有配置公钥，就使用https也也可以</p>
+<p>使用push命令上传到指定的仓库的主分支</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add origin git@e.coding.net:ybb-888&#x2F;source.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/U80024a2f392b4b57a05afec573207dcee.png"  alt="image-20200420103714593"></p>
+<h3 id="检测"><a href="#检测" class="headerlink" title="检测"></a>检测</h3><p>然后刷新coding仓库</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/U450f6cb691fc4530b157ba2b16014560t.png"  alt="image-20200420103746605"></p>
+<h2 id="新建静态文件仓库"><a href="#新建静态文件仓库" class="headerlink" title="新建静态文件仓库"></a>新建静态文件仓库</h2><h3 id="新建仓库-1"><a href="#新建仓库-1" class="headerlink" title="新建仓库"></a>新建仓库</h3><p>新创建一个静态网页仓库，myblog</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/Ufb0e16d351484f74bc5a5a3978b0c3ca4.png"  alt="image-20200420103936828"></p>
+<p>复制路径</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/U264ef2e8c4d540b3832535cc1f76df83t.png"  alt="image-20200420104306889"></p>
+<h1 id="创建cloud-studio"><a href="#创建cloud-studio" class="headerlink" title="创建cloud studio"></a>创建cloud studio</h1><p>右上角点击这个按钮</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/U0aafbe4a887c48bf884477a8912b655dC.png"  alt="image-20200420104402731"></p>
+<h2 id="配置ssh公钥"><a href="#配置ssh公钥" class="headerlink" title="配置ssh公钥"></a>配置ssh公钥</h2><h3 id="复制云studio的公钥"><a href="#复制云studio的公钥" class="headerlink" title="复制云studio的公钥"></a>复制云studio的公钥</h3><p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/U9e0d72768cef411f80604a81727c358fJ.png"  alt="image-20200420104640366"></p>
+<p>来到coding仓库页面，点击个人设置</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/U4d3cc671ba1240be88f0a60a4563b2fdZ.png"  alt="image-20200420104705565"></p>
+<p>名字随便取</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/Ub69bedcb87b64c64b5471c8e9829b41dw.png"  alt="image-20200420104810330"></p>
+<h2 id="创建工作空间"><a href="#创建工作空间" class="headerlink" title="创建工作空间"></a>创建工作空间</h2><p>复制源码仓库的ssh</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/Udf1f41aef4004984b2a5c79e3997d8ddu.png"  alt="image-20200420105018394"></p>
+<p>然后来到云开发界面</p>
+<p>选择nodi.js环境，粘贴刚才复制的公钥</p>
+<blockquote>
+<p>如果你没有添加cloud studio的公钥到个人设置的ssh公钥，你克隆的仓库就必须使用https路径，而且仓库必须是公开的，coding默认创建仓库是私有的</p>
+</blockquote>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/U23a6a44fee884dccb823c185cdac806dV.png"  alt="image-20200420105129612"></p>
+<p>如果等了几分钟，都是start load ide</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/Ue6d100279c2b43fdbd67b0f79e994a17A.png"  alt="image-20200420105355727"></p>
+<p>就更换浏览器，我默认用的微软的自带了浏览器</p>
+<p>为啥微软的浏览器不行，可能是内核原因，<del>总之就是垃圾</del></p>
+<p>然后复制该网页路径，到火狐</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/U2bc51c1a82c1453c8e64c5381ebf69b7l.png"  alt="image-20200420105512449"></p>
+<p>几分钟后，就进入到ide控制台了</p>
+<p>红框里就是我们copy源码仓库里的代码</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/U0f8e97c099494cc5ba21c0fb3759d06dm.png"  alt="image-20200420105648029"></p>
+<h2 id="添加hexo环境"><a href="#添加hexo环境" class="headerlink" title="添加hexo环境"></a>添加hexo环境</h2><h3 id="新建终端"><a href="#新建终端" class="headerlink" title="新建终端"></a>新建终端</h3><p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/U6858ed0ae6434f41854e53b954325ca3h.png"  alt="image-20200420105929983"></p>
+<p>在此处输入以下内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">npm install hexo --save</span><br></pre></td></tr></table></figure>
+
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/U291fa00a2f4f41e9a4c2d94a196ccd7aM.gif"  alt=""></p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/Ua13cfa0bcc56494ab09b503888684044K.gif"  alt=""></p>
+<p>如果出现了下面报错信息</p>
+<blockquote>
+<p>ERROR Local hexo not found in ~/RemoteWorking<br>ERROR Try running: ‘npm install hexo –save’</p>
+</blockquote>
+<p>则在终端输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm link hexo</span><br></pre></td></tr></table></figure>
+
+<p>然后hexo -v，看能否查看版本</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/Uc98deb42713e4ebda7f00bbfcdcfe3c9N.png"  alt="image-20200420115401757"></p>
+<h2 id="用-cloud-studio-写第一篇文章"><a href="#用-cloud-studio-写第一篇文章" class="headerlink" title="用 cloud studio 写第一篇文章"></a>用 cloud studio 写第一篇文章</h2><p>在终端中输入命令 <code>hexo new 文章名</code>来创建文章</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new 测试</span><br></pre></td></tr></table></figure>
+
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/U0d8bb0dcaca74757934e9a5919edf3d4E.png"  alt="image-20200420122009134"></p>
+<p>然后打开 <code>/source/_posts</code> 就可以看到你刚刚创建的文章了。</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/Uf7076b9b44574da7a9640bf2e66bea2eJ.png"  alt="image-20200420122125998"></p>
+<p>写完文章后，（这个里边也是 <code>ctrl+s</code> 保存文章哦）</p>
+<p>我们设置一下我们的 git 标识 也就是邮箱和名字。这是 git 必须要求设置的。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;you@example.com&quot;</span><br><span class="line">git config --global user.name &quot;Your Name&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="将云端博客部署在静态仓库"><a href="#将云端博客部署在静态仓库" class="headerlink" title="将云端博客部署在静态仓库"></a>将云端博客部署在静态仓库</h2><p>找到创建放静态页面的仓库，复制地址</p>
+<p>因为个人设置里配置了could studio的公钥</p>
+<p>这里就直接复制ssh就可以了</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/Uae05342be3a5469b93437762844ee7f2j.png"  alt="image-20200420123437172"></p>
+<p>然后再cloud studio 里找到你的博客的配置文件，修改一下提交仓库地址</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: &#39;git&#39;</span><br><span class="line">  repository: </span><br><span class="line">    coding: git@e.coding.net:ybb-888&#x2F;myblog.git,master</span><br></pre></td></tr></table></figure>
+
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/Uda6ca148bdab432984e9dadd435668ebM.png"  alt="image-20200420123540751"></p>
+<p>配置了记得保存ctrl +s</p>
+<p>然后在终端，hexo cl ，hexo g，hexo deploy</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/U0d234c1c84eb40a4b273979bda8b188fl.png"  alt="image-20200420123604212"></p>
+<h1 id="静态仓库部署页面"><a href="#静态仓库部署页面" class="headerlink" title="静态仓库部署页面"></a>静态仓库部署页面</h1><p>来到静态仓库，刷新页面，看到有文件，就说明hexo d没问题。</p>
+<p>因为刚才我设置gitname的时候设置的yourname，所以这里名字就是yourname，后面你可以可以再次设置gitname等信息</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/Ua4ab150bba824dd78ef695dbb9aa1d2b3.png"  alt=""></p>
+<p>来到左侧，持续部署，点击静态网站</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/Ub0fbdd8a921840229887116ee2dace69y.png"  alt="image-20200420123902798"></p>
+<p>这里需要实名，然后直接发布静态网站</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/Ubd770849b4964661951cf097869a0481g.png"  alt="image-20200420123958601"></p>
+<p>点击立即部署，然后点击coding给的域名就能访问静态网站了</p>
+<p><img src="/" class="lazyload" data-src="https://ae01.alicdn.com/kf/U3be24368e6cb4ddaae83985c702a0f28g.png"  alt="image-20200420124044455"></p>
+<h1 id="将cloud-studio里的博客同步到源码仓库"><a href="#将cloud-studio里的博客同步到源码仓库" class="headerlink" title="将cloud studio里的博客同步到源码仓库"></a>将cloud studio里的博客同步到源码仓库</h1><p>在终端中输入以下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line"></span><br><span class="line">git commit -m 说明</span><br><span class="line"></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">馀小少</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://yuxiaoshao.cn/archives/adbc15c8.html">http://yuxiaoshao.cn/archives/adbc15c8.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yuxiaoshao.cn" target="_blank">馀小少</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/coding/">coding</a></div><div class="post_share"><div class="social-share" data-image="https://image.baidu.com/search/down?tn=download&amp;word=download&amp;ie=utf8&amp;fr=detail&amp;url=https%3A%2F%2Ftimgsa.baidu.com%2Ftimg%3Fimage%26quality%3D80%26size%3Db9999_10000%26sec%3D1585742180357%26di%3D43c1277e97523ad5f51d24705b20e790%26imgtype%3D0%26src%3Dhttp%253A%252F%252Fimg.pptjia.com%252Fimage%252F20190115%252Fcb73e2820bd544146a508cc1bcb57c5f.jpg&amp;thumburl=https%3A%2F%2Fss1.bdstatic.com%2F70cFvXSh_Q1YnxGkpoWK1HF6hhy%2Fit%2Fu%3D3055256357%2C371576300%26fm%3D26%26gp%3D0.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/wc.png" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/zfb.png" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/archives/8646cdf.html"><img class="prev_cover lazyload" data-src="https://image.baidu.com/search/down?tn=download&amp;word=download&amp;ie=utf8&amp;fr=detail&amp;url=https%3A%2F%2Ftimgsa.baidu.com%2Ftimg%3Fimage%26quality%3D80%26size%3Db9999_10000%26sec%3D1587325166850%26di%3D49f38faca8b39bd1319f05d9758856f0%26imgtype%3D0%26src%3Dhttp%253A%252F%252Ffp1.fghrsh.net%252F2018%252F07%252F04%252F1e44a9d8605a9815af8954b33084958d.png&amp;thumburl=https%3A%2F%2Fss1.bdstatic.com%2F70cFvXSh_Q1YnxGkpoWK1HF6hhy%2Fit%2Fu%3D3901611702%2C1411663271%26fm%3D26%26gp%3D0.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">分享几款自己用的图床</div></div></a></div><div class="next-post pull_right"><a href="/archives/3139128020.html"><img class="next_cover lazyload" data-src="http://image.baidu.com/search/down?tn=download&amp;word=download&amp;ie=utf8&amp;fr=detail&amp;url=http%3A%2F%2Fpic2.zhimg.com%2Fv2-f9654b817205f6af3e472af284ecc2b2_1200x500.jpg&amp;thumburl=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D1051132835%2C1344326547%26fm%3D26%26gp%3D0.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">（二）本机生成ssh公钥</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+
+window.valine = new Valine({
+  el:'#vcomment',
+  notify: false,
+  verify: false,
+  appId: 'YAaKKTLel2asd8STHnNjSyNr-gzGzoHsz',
+  appKey: 'OH48I5aWBSYl48GFeb2KKeyb',
+  placeholder: '留下你的脚印',
+  avatar: 'monsterid',
+  meta: guest_info,
+  pageSize: '10',
+  lang: 'en',
+  recordIP: false,
+  serverURLs: ''
+});</script></div></article></main><footer id="footer" style="background-image: url(http://image.baidu.com/search/down?tn=download&amp;word=download&amp;ie=utf8&amp;fr=detail&amp;url=http%3A%2F%2Fpic2.zhimg.com%2Fv2-f9654b817205f6af3e472af284ecc2b2_1200x500.jpg&amp;thumburl=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D1051132835%2C1344326547%26fm%3D26%26gp%3D0.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 By 馀小少</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">欢迎来到馀小少的博客</div><div class="icp"><a href="www.yuxiaoshao.cn"><img class="icp-icon" src="/img/icp.png"/><span>川A8888</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="/js/third-party/fireworks.js"></script><script id="canvas_nest" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="/js/third-party/canvas-nest.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script><script src="/js/search/local-search.js"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":350},"mobile":{"show":true},"log":false});</script></body></html>
